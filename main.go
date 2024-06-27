@@ -39,7 +39,7 @@ var (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "ghtopdep [flags] URL",
+	Use:   "topdep [flags] URL",
 	Short: "CLI tool for sorting dependent repositories by stars",
 	Args:  cobra.ExactArgs(1),
 	Run:   run,

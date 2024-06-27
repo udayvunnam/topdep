@@ -1,6 +1,6 @@
-# ghtopdep
+# topdep
 
-`ghtopdep` is a CLI tool that sorts GitHub repository dependents by the number of stars. This tool can be useful for developers who want to analyze the popularity of repositories that depend on a specific repository.
+`topdep` is a CLI tool that sorts GitHub repository dependents by the number of stars. This tool can be useful for developers who want to analyze the popularity of repositories that depend on a specific repository.
 
 ## Features
 
@@ -11,16 +11,16 @@
 
 ## Installation
 
-To install `ghtopdep`, ensure you have Go installed on your machine, then run:
+To install `topdep`, ensure you have Go installed on your machine, then run:
 
 ```sh
-go get github.com/yourusername/ghtopdep
+go get github.com/yourusername/topdep
 ```
 
 ## Usage
 
 ```sh
-ghtopdep [flags] URL
+topdep [flags] URL
 ```
 
 ## Flags
@@ -33,19 +33,20 @@ ghtopdep [flags] URL
 ## Examples
 
 ```sh
-ghtopdep --minstar 50 --rows 10 https://github.com/yourusername/yourrepository
+topdep --minstar 50 --rows 10 https://github.com/yourusername/yourrepository
 ```
 
 ## Build from Source
 
-To build ghtopdep from source, clone the repository and build the binary:
+To build topdep from source, clone the repository and build the binary:
 
 ```sh
-git clone https://github.com/yourusername/ghtopdep
-cd ghtopdep
-go build -o ghtopdep
+git clone https://github.com/yourusername/topdep
+cd topdep
 
-./ghtopdep [flags] URL
+go build -o topdep
+
+./topdep [flags] URL
 ```
 
 ## Contributing
@@ -56,4 +57,4 @@ If you find any issues or have suggestions for improvements, please open an issu
 
 This project is licensed under the MIT License. See the ./LICENSE file for details.
 
-Enjoy using **ghtopdep**!
+Enjoy using **topdep**!
