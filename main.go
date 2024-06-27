@@ -3,12 +3,14 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
 	"os"
 	"sort"
 	"strconv"
 	"strings"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/spf13/cobra"
 )
 
@@ -78,9 +80,15 @@ func fetchDependents(url string, isRepositories bool) ([]Repo, error) {
 
 	pageURL := fmt.Sprintf("%s/network/dependents?dependent_type=%s", url, dependentType)
 
-	repos := []Repo{}
+	var repos []Repo
 	for {
-		doc, err := goquery.NewDocument(pageURL)
+		resp, err := http.Get(pageURL)
+		if err != nil {
+			return nil, err
+		}
+		defer resp.Body.Close()
+
+		doc, err := goquery.NewDocumentFromReader(resp.Body)
 		if err != nil {
 			return nil, err
 		}
@@ -124,11 +132,13 @@ func sortRepos(repos []Repo, rows, minStar int) []Repo {
 }
 
 func displayTable(repos []Repo) {
-	fmt.Println("| URL | Stars |")
-	fmt.Println("|-----|-------|")
+	t := table.NewWriter()
+	t.SetOutputMirror(os.Stdout)
+	t.AppendHeader(table.Row{"URL", "Stars"})
 	for _, repo := range repos {
-		fmt.Printf("| %s | %d |\n", repo.URL, repo.Stars)
+		t.AppendRow([]interface{}{repo.URL, repo.Stars})
 	}
+	t.Render()
 }
 
 func displayJSON(repos []Repo) {
