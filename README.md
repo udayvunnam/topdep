@@ -41,7 +41,7 @@ topdep --minstar 50 --rows 10 https://github.com/yourusername/yourrepository
 To build topdep from source, clone the repository and build the binary:
 
 ```sh
-git clone https://github.com/yourusername/topdep
+git clone https://github.com/udayvunnam/topdep
 cd topdep
 
 go build -o topdep
