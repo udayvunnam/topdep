@@ -33,7 +33,7 @@ topdep [flags] URL
 ## Examples
 
 ```sh
-topdep --minstar 50 --rows 10 https://github.com/yourusername/yourrepository
+topdep --minstar 50 --rows 10 https://github.com/udayvunnam/yourrepository
 ```
 
 ## Build from Source
