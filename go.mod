@@ -1,6 +1,6 @@
 module github.com/udayvunnam/topdep
 
-go 1.22.3
+go 1.23.2
 
 require (
 	github.com/PuerkitoBio/goquery v1.9.2

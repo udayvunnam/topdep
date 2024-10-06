@@ -14,7 +14,7 @@
 To install `topdep`, ensure you have Go installed on your machine, then run:
 
 ```sh
-go get github.com/yourusername/topdep
+go get github.com/udayvunnam/topdep
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ topdep [flags] URL
 ## Examples
 
 ```sh
-topdep --minstar 50 --rows 10 https://github.com/udayvunnam/yourrepository
+topdep --minstar 50 --rows 10 https://github.com/<username>/<repository>
 ```
 
 ## Build from Source
